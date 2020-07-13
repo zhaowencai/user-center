@@ -1,0 +1,41 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        #nacos 服务地址
+        server-addr: localhost:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8765
+#    stream:
+#      rocketmq:
+#        binder:
+#          name-server: localhost:9876
+#      bindings:
+#        input:
+#          # 指定 topic
+#          destination: test-topic
+#          # 如果使用的是 rocketMQ，必须设置；使用其它 MQ，可留空
+#          group: test-group
+  application:
+    name: user-center
+  datasource:
+    url: jdbc:mysql://localhost:3306/user_center
+    hikari:
+      username: root
+      password: fool5788
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jackson:
+    serialization:
+      indent-output: true
+server:
+  port: 8011
+
+logging:
+  level:
+    com.alibaba.nacos: error
+
+rocketmq:
+  name-server: localhost:9876
+
+
